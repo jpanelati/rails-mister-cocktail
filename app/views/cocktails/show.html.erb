@@ -1,7 +1,6 @@
 <div class="banner">
 	<div class="card" style="width: 18rem">
-		<% src =  %>
-		<img src= "http://loremflickr.com/80/80/<%= @cocktail.name %>" class="card-img-top" alt="...">
+    <%= cl_image_tag @cocktail.photo.key, width:250, heigth:250%>
 		<div class="card-body">
 			<h5 class="card-title"><%= @cocktail.name %></h5>
 			<p class="card-text">
