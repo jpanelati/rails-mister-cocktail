@@ -1,0 +1,18 @@
+<div class="banner">
+	<div class="card" style="width: 18rem">
+		<% src =  %>
+		<img src= "http://loremflickr.com/80/80/<%= @cocktail.name %>" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title"><%= @cocktail.name %></h5>
+			<p class="card-text">
+				<ul>
+					<% @cocktail.doses.each do |dose| %>
+					<li><%= dose.ingredient.name %> -- <%= dose.description %> <%= link_to "🗑️", dose_path(dose), method: :delete %></li>
+					<% end %>
+				</ul>
+			</p>
+			<%= link_to "Add an ingredient", new_cocktail_dose_path(params[:id]), class: "btn btn-primary" %>
+			<%=link_to "Go back", root_path, class: "btn btn-primary"%>
+		</div>
+	</div>
+</div>

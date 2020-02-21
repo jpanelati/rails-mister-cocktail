@@ -1,0 +1,27 @@
+<div class="banner">
+	<div class="container index">
+		<div class="d-flex justify-content-center">
+		  <h1>Welcome to my cocktail page</h1>
+		  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>	
+		</div>
+		<div class="cards d-flex">
+			<% @cocktails.each do |cocktail| %>
+			<div class="card" style="width: 18rem">
+				<% src =  %>
+				<img src= "http://loremflickr.com/80/80/<%= cocktail.name %>" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title"><%= cocktail.name %></h5>
+					<p class="card-text">
+						<ul>
+							<% cocktail.doses.each do |dose| %>
+							<li><%= dose.ingredient.name %> -- <%= dose.description %></li>
+							<% end %>
+						</ul>
+					</p>
+					<%=link_to "See more", cocktail_path(cocktail), class: "btn btn-primary"%>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
