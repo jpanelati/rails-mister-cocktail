@@ -11,8 +11,32 @@
 </head>
 
 <body>
+  <div class="lewagons-navbar">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to root_path, style: "font-size: 1.5em; color: black" do %>
+        <i class="fas fa-cocktail"></i>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-dark rounded-lg btn-sm" %>
+    </div>
+  </div>
   <%= yield %>
-  <%= javascript_include_tag "application" %> 
-  <%= javascript_pack_tag "application" %>    
+  <div class="footer sticky-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+    This page was made with <i class="fas fa-heart"></i> by Joaco
+    </div>
+  </div>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_pack_tag "application" %>
 </body>
 </html>

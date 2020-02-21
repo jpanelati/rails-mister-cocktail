@@ -1,5 +1,8 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name, label: "Add a name" %>
-  <%= f.input :photo, as: :file%>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="form-container">
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name, label: "Add a name", class: "form-control" %>
+    <%= f.input :photo, label: "Add a photo", as: :file, class: "form-group"%>
+    <%= f.button :submit, class: "btn btn-dark", class: "form-control" %>
+  <% end %>
+  <%= link_to "Go back", root_path, class: "btn btn-dark btn-sm" %>
+</div>

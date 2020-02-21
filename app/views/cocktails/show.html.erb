@@ -1,17 +1,12 @@
-<div class="banner">
-	<div class="card" style="width: 18rem">
-    <%= cl_image_tag @cocktail.photo.key, width:250, heigth:250%>
-		<div class="card-body">
-			<h5 class="card-title"><%= @cocktail.name %></h5>
-			<p class="card-text">
-				<ul>
-					<% @cocktail.doses.each do |dose| %>
-					<li><%= dose.ingredient.name %> -- <%= dose.description %> <%= link_to "🗑️", dose_path(dose), method: :delete %></li>
-					<% end %>
-				</ul>
-			</p>
-			<%= link_to "Add an ingredient", new_cocktail_dose_path(params[:id]), class: "btn btn-primary" %>
-			<%=link_to "Go back", root_path, class: "btn btn-primary"%>
-		</div>
-	</div>
+<div class="container">
+  <%= cl_image_tag @cocktail.photo.key, width: 380, height: 320%>
+  <h5 class="card-title mt-2"><%= @cocktail.name %></h5>
+  <ul style="list-style: none;">
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.ingredient.name %> -- <%= dose.description %> <%= link_to "🗑️", dose_path(dose), method: :delete %></li>
+  <% end %>
+  </ul>
+  </p>
+  <%= link_to "Add an ingredient", new_cocktail_dose_path(params[:id]), class: "btn btn-dark" %>
+  <%= link_to "Go back", root_path, class: "btn btn-dark"%>
 </div>
